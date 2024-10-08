@@ -118,13 +118,13 @@ router.get("/api/users/:_id/logs",async (req,res)=>{
         _id
     )
     
-    return res.status(200).json({username:user.username,count:user.log.length,_id:user._id,log:user.log.map(log=>{
+    return res.status(200).json({_id:user._id,username:user.username,log:user.log.map(log=>{
         return {
             description:log.description,
             duration:log.duration,
             date:new Date(log.date).toDateString()
         }
-    })})
+    }),count:user.log.length})
 
    }catch(e){
     console.log(e)
