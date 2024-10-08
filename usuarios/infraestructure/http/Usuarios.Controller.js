@@ -64,11 +64,12 @@ router.post("/api/users/:_id/exercises",async (req,res)=>{
         return res.status(404).json({error:"Not Found"})
     }
     return res.status(201).json({
-        _id:user._id,
+        
         username:user.username,
-        date:date?new Date(date).toDateString():new Date().toDateString(),
+        description,
         duration,
-        description
+        date:date?new Date(date).toDateString():new Date().toDateString(),
+        _id:user._id,
        
     })
 
