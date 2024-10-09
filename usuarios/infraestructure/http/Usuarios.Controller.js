@@ -124,7 +124,7 @@ router.get("/api/users/:_id/logs",async (req,res)=>{
         return {
             description:log.description,
             duration:log.duration,
-            date:log.date.toDateString()
+            date:new Date(log.date).toDateString()
         }
     })})
 
