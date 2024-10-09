@@ -59,7 +59,7 @@ router.post("/api/users/:_id/exercises",async (req,res)=>{
     }
      
     
-    user=await User.findByIdAndUpdate(_id,{$push:{log:{description,duration,date:new Date(date)}}},{new:true})
+    user=await User.findByIdAndUpdate(_id,{$push:{log:{description,duration,date}}},{new:true})
     if(!user){
         return res.status(404).json({error:"Not Found"})
     }
